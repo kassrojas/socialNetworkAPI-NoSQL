@@ -18,8 +18,7 @@ const thoughtSchema = new Schema(
             type: String, 
             required: true,
         },
-        //array of nested documents created with the reactionSchema
-        // need to import Reaction model 
+        //array of nested documents created with the reactionSchemaß
         reactions: [ Reaction ],
     },
     {
