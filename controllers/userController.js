@@ -50,7 +50,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
-    // Delete A User( BONUS: & their Thoughts)
+    // Delete A User (BONUS: & their Thoughts)
     deleteUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
             .then((user) =>
