@@ -21,7 +21,7 @@ const reactionSchema = new Schema(
             // get: (date) => {
             //     if (date) return date.toDateString();
             // },
-            default: Date.now.toDateString(),
+            default: Date.now(),
         },
     },
     {
