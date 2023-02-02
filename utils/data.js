@@ -1,67 +1,64 @@
-const names = [
-    'Aaran',
-    'Aaren',
-    'Aarez',
-    'Aarman',
-    'Aaron',
-    'Aaron-James',
-    'Aarron',
-    'Aaryan',
-    'Aaryn',
-    'Aayan',
-    'Aazaan',
-    'Abaan',
-    'Abbas',
-    'Abdallah',
-    'Abdalroof',
-    'Abdihakim',
-    'Abdirahman',
-    'Abdisalam',
-    'Abdul',
-    'Abdul-Aziz',
-    'Abdulbasir',
-    'Abdulkadir',
-    'Abdulkarem',
-    'Smith',
-    'Jones',
-    'Coollastname',
-    'Ze',
-    'Zechariah',
-    'Zeek',
-    'Zeeshan',
+const fruitNames = [
+    'pineapple',
+    'apple',
+    'pear',
+    'cherry',
+    'lemon',
+    'lime',
+    'orange',
+    'raspberry',
+    'blueberry',
+    'papaya',
+    'mango',
+    'cantelope',
+    'honeydew',
+    'kiwi',
+    'starfruit',
+    'arugula',
+    'radish',
+    'guava',
+    'garlic',
+    'lettuce',
+    'grape',
+    'grapefruit',
+    'fig',
+    'avocado',
+    'banana',
+    'broccoli',
+    'carrot',
 ];
 
-const thoughtDesc = [
-    'Decision Tracker',
-    'Find My Phone',
-    'Learn Piano',
-    'Starbase Defender',
-    'Tower Defense',
-    'Monopoly Money Manager',
-    'Movie trailers',
-    'Hello world',
-    'Stupid Social Media App',
-    'Notes',
-    'Messages',
-    'Email',
-    'Compass',
-    'Firefox',
-    'Running app',
-    'Cooking app',
-    'Poker',
-    'Deliveries',
-];
+const adjective = [
+    'best',
+    'calm',
+    'confused',
+    'dark',
+    'defeated',
+    'frail',
+    'handsome',
+    'hungry',
+    'ill',
+    'itchy',
+    'lazy',
+    'puzzled',
+    'odd',
+    'prickly',
+    'smiling',
+    'super',
+    'thankful',
+    'thoughtful',
+    'zealous',
+    'worrisome',
+    'witty',
+    'ugly',
+]
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // build a random username
 const randomName = () => {
-    return `${getRandomArrItem(names)}_${getRandomArrItem(names)}`;
+    return `${getRandomArrItem(adjective)}_${getRandomArrItem(fruitNames)}`;
 };
 
-const randomThought = () => {
-    return `${getRandomArrItem(thoughtDesc)}`;
-};
-
-module.exports = { randomName, randomThought };
+module.exports = { randomName };
