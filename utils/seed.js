@@ -16,7 +16,7 @@ connection.once('open', async () => {
     // create empty array to hold the users
     const users = [];
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         const username = randomName();
         const randomNumber = Math.floor(Math.random() * 100);
         const email = `${username}${randomNumber}@email.com`;
