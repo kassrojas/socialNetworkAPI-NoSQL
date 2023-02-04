@@ -1,10 +1,12 @@
 const { User, Thought } = require('../models');
 
+
 module.exports = {
 
     // Get All Thoughts
     getThoughts(req, res) {
         Thought.find()
+            .select('-__v')
             .then((thoughts) => res.json(thoughts))
             .catch((err) => {
                 console.log(err);
@@ -81,11 +83,9 @@ module.exports = {
 
     // Create Reaction stored in single thought's reactions array field
     createReaction(req, res) {
-        console.log('You are adding a reaction');
-        console.log(req.body);
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $addToSet: { thought: req.body } },
+            { $addToSet: { reactions: req.body } },
             { runValidators: true, new: true },
         )
             .then((thought) =>
@@ -102,7 +102,7 @@ module.exports = {
     deleteReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reaction: { reactionId: req.params.reactionId } } },
+            { $pull: { reactions: { reactionId: req.params.reactionId } } },
             { runValidators: true, new: true }
         )
             .then((thought) =>
